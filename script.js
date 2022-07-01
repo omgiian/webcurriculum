@@ -77,6 +77,9 @@ function createListItem(ingredient, id) {
 // Exercise 03
 
 
+
+
+
 // 01 
 
 function secondHalf(string) {
@@ -88,6 +91,10 @@ function secondHalf(string) {
     return string;
   }
 
+
+
+
+
 // 02
 
 function squareRoot(number) {
@@ -96,32 +103,62 @@ function squareRoot(number) {
 }
 
 
+
+
+
 // 03
+
+var squareList = (["1","2","3","4","5"])
+var squareNumber = [];
+var squareNumber1 = (Math.pow(squareList, 2));
+
+function squareNumberList(squareList) {
+    var squareNumber = [];
+    for(var i = 0; i < squareList.length; i = i + 1) {
+        var squareNumber1 = (Math.pow(squareList[i], 2));
+        squareNumber.push(squareNumber1);
+    }
+    return squareNumber 
+    
+}
 
 // 04
 
+function isPrime(num){
+    let isPrime = '';
+    for(let i = 2; i <= Math.sqrt(num); i++){
+      if(num % i === 0){
+        isPrime = false;
+      } else {
+        isPrime = true;
+      }
+    }
+    return isPrime;
+  
+  }
+  
 // 05
 
 // 06
 
-function createListLang(lang, id) {
-    var htmlString = '<li id="lang-' + id + '" class="li-lang">'
-        + lang + '</li>';
+function createListItem(ingredient, id) {
+    var htmlString = '<li id="ingredient-' + id + '" class="li-ingredient">'
+        + ingredient + '</li>';
         return htmlString;
     }
     
-    function createList2(listOfLanguages) {
+    function createList(listOfIngredients) {
         var htmlString = '';
-        for(var i = 0; i < listOfLanguages.length; i = i + 1) {
-            htmlString = htmlString + createListLang(listOfLanguages[i], i);
+        for(var i = 0; i < listOfIngredients.length; i = i + 1) {
+            htmlString = htmlString + createListItem(listOfIngredients[i], i);
         }
         return htmlString;
     }
     
-    var listOfLanguages = ["apple", "orange", "pear", "nutella"];
+    var listOfIngredients = ["English", "Norwegian", "Italian", "Spanish"];
     
     function populateList2() {
-        var ulElement = document.getElementById('lang');
-        ulElement.innerHTML = createList2(listOfLanguages);
+        var ulElement = document.getElementById('ingredients');
+        ulElement.innerHTML = createList(listOfIngredients);
     }
     
